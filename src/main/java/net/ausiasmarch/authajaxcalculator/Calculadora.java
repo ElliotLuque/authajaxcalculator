@@ -33,7 +33,6 @@ public class Calculadora extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.addHeader("Access-Control-Allow-Origin", "*");
         response.setContentType("application/json;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             Gson gson = new GsonBuilder()
