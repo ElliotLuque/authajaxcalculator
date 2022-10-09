@@ -1,5 +1,9 @@
 const calcularUI = (msg) => {
+  const resultado = document.getElementById("resultado");
+
   if (msg === "No hay sesión iniciada!") {
+    resultado.innerHTML = "";
+
     // Show toast
     const calculateToast = document.getElementById("error-toast");
     const calculateToastBody = document.getElementById("error-toast-body");
@@ -8,7 +12,6 @@ const calcularUI = (msg) => {
     const toast = new bootstrap.Toast(calculateToast);
     toast.show();
   } else {
-    const resultado = document.getElementById("resultado");
     resultado.innerHTML = "Resultado: " + msg;
   }
 };

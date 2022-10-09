@@ -14,3 +14,11 @@ selector.addEventListener(
   "change",
   () => (document.getElementById("resultado").innerHTML = "")
 );
+
+// Borrar datos de modal del login cuando se cierre
+const loginModal = document.getElementById("login-modal");
+loginModal.addEventListener("hide.bs.modal", () => {
+  document.getElementById("login").value = "";
+  document.getElementById("pass").value = "";
+  document.getElementById("error-login-msg").innerHTML = "";
+});
