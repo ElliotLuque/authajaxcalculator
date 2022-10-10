@@ -1,6 +1,6 @@
 import { calcularUI, loginUI, logoutUI } from "./ui.js";
 
-const BASE_URL = "http://localhost:8080/authajaxcalculator/calculadora";
+const BASE_URL = "http://localhost:8085/authajaxcalculator/calculadora";
 
 async function calcular() {
   const operacion = document.getElementById("operacion").value;
