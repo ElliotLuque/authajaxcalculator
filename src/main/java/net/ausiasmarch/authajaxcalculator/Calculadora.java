@@ -8,6 +8,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
@@ -86,6 +89,18 @@ public class Calculadora extends HttpServlet {
                         }
 
                         out.print(gson.toJson(resultado));
+                    } else {
+                        out.print(gson.toJson("No hay sesión iniciada!"));
+                    }
+                    break;
+                case "getdata":
+                    if (session.getAttribute("user") != null) {
+                        List<String> list = new ArrayList<>();
+                        for (int i = 1; i <= 10; i++) {
+                            list.add("Elemento " + i);
+                        }
+                        Collections.shuffle(list);
+                        out.print(gson.toJson(list));
                     } else {
                         out.print(gson.toJson("No hay sesión iniciada!"));
                     }
